@@ -29,6 +29,7 @@
   flex-direction: column;
   border-radius: 5px;
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 9px 20px 3px rgba(204, 168, 207, 1);
   &:hover,
   &:focus,
   &:active {
@@ -71,6 +72,8 @@
   &-main {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    border: 2px solid $bcgText;
+    border-bottom: none;
     object-fit: cover;
     width: 100%;
     object-position: center;
