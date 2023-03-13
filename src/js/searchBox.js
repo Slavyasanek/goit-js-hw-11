@@ -13,16 +13,16 @@ const renderPosts = (pictures) => {
         <a href="${largeImageURL}" class="img-thumb"><img src="${webformatURL}" alt="${tags}" loading="lazy" class="img-main"/></a>
         <div class="info">
           <p class="info-item">
-          Likes: ${likes}
+          <span>Likes:</span><span> ${likes}</span>
           </p>
           <p class="info-item">
-            Views ${views}
+            <span>Views:</span><span> ${views}</span>
           </p>
           <p class="info-item">
-            Comments: ${comments}
+            <span>Comments:</span><span> ${comments}</span>
           </p>
           <p class="info-item">
-            Downloads: ${downloads}
+            <span>Downloads:</span> <span>${downloads}</span>
           </p>
         </div>
       </div>`
