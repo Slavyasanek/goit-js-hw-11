@@ -5,6 +5,7 @@ import throttle from "lodash.throttle";
 import { fetchPictures } from "./js/fetchPictures";
 import { noSuccess, totalHitsSucces, endOfLoad, emptyRequestAlert } from "./js/alerts";
 import { renderPosts } from "./js/renderImg";
+import './js/scrollTop';
 
 let page = 1;
 let simpleLightBox;
@@ -81,4 +82,3 @@ const loadMore = () => {
             })
     }
 }
-
