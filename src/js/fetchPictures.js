@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 
 const API_KEY = '34346691-066ec8be9ab970c052f0d3dfc';
 const URL = 'https://pixabay.com/api/';
@@ -13,6 +13,6 @@ export const fetchPictures = async (title) => {
         safesearch: true,
         per_page: page * 40,
     })
-    const response = await axios.get(`${URL}?${searchFilters}`);
+    const response = await fetch(`${URL}?${searchFilters}`);
     return response.data;
 }

@@ -55,5 +55,3 @@ const getImages = (e) => {
 }
 
 refs.submitForm.addEventListener("submit", getImages);
-
-console.log(refs.submitForm.searchQuery)
