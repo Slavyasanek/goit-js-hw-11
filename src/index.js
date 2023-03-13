@@ -9,7 +9,7 @@ import { renderPosts } from "./js/renderImg";
 let page = 1;
 let simplelightbox;
 let totalPages;
-let shouldLoad;
+let shouldLoad = true;
 
 export const refs = {
   gallery: document.querySelector('.gallery'),
@@ -34,7 +34,7 @@ const getImages = (e) => {
         refs.gallery.insertAdjacentHTML("beforeend", posts);
         if (r.total > 40) {
           shouldLoad = true;
-          window.addEventListener("scroll", throttle(loadMore, 1000))
+          window.addEventListener("scroll", throttle(loadMore, 500))
         }
       }
     })
@@ -50,11 +50,10 @@ const loadMore = () => {
   const screenHeight = window.innerHeight;
   const scrolled = window.pageYOffset;
 
-  const thershold = scrolled + screenHeight
-
+  const thershold = scrolled + screenHeight;
   const request = refs.submitForm.searchQuery.value.trim();
 
-  if (thershold > heightOfBody && shouldLoad) {
+  if (thershold >= heightOfBody && shouldLoad) {
     page += 1;
     fetchPictures(request, page)
       .then((r) => {
