@@ -27,4 +27,13 @@ const endOfLoad = () => {
         });
 }
 
-export { noSuccess, totalHitsSucces, endOfLoad };
+const emptyRequestAlert = () => {
+    return Notiflix.Notify.info(
+        `Your request is empty! That's why we provide you with amazing pictures:)`,
+        {
+            timeout: 3000,
+            cssAnimationStyle: 'zoom',
+        });
+}
+
+export { noSuccess, totalHitsSucces, endOfLoad, emptyRequestAlert};

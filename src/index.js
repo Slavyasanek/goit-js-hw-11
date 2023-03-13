@@ -3,7 +3,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import throttle from "lodash.throttle";
 
 import { fetchPictures } from "./js/fetchPictures";
-import { noSuccess, totalHitsSucces, endOfLoad } from "./js/alerts";
+import { noSuccess, totalHitsSucces, endOfLoad, emptyRequestAlert } from "./js/alerts";
 import { renderPosts } from "./js/renderImg";
 
 let page = 1;
@@ -27,7 +27,11 @@ const getImages = (e) => {
       if (r.hits.length === 0) {
         noSuccess();
       } else {
-        totalHitsSucces(r.totalHits);
+        if (request === "") {
+            emptyRequestAlert();
+        } else {
+            totalHitsSucces(r.totalHits);
+        }
         totalPages = Math.ceil(r.totalHits / 40);
         console.log(r);
         const posts = renderPosts(r.hits);
