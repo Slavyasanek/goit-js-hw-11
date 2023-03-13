@@ -16,5 +16,3 @@ export const fetchPictures = async (title) => {
     const response = await axios.get(`${URL}?${searchFilters}`);
     return response.data;
 }
-
-// fetchPictures('puppy').then(r => console.log(r),page +=1);
